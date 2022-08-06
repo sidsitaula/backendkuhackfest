@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const authRoute = require("./routes/authentication");
 const authMiddleware = require("./middlewares/auth.middleware");
 const courseStream = require("./routes/courseStream");
+const courseItem = requite("./routes/courseItem");
 const notFound = require("./middlewares/notFound");
 
 //creating server instance
@@ -27,6 +28,7 @@ app.get("/contact", (req, res) => {
 //Routers
 //app.use('/',authRoute)
 app.use("/api/v1/courseStream", courseStream);
+app.use("/api/v1/courseStream/courseItem", courseItem);
 app.use(notFound);
 
 //configuring env for environment variables
